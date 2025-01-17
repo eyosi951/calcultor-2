@@ -1,0 +1,118 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(135deg, hsl(240, 54%, 33%), hsl(240, 44%, 20%));
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+/* Header styling */
+.header {
+    text-align: center;
+    margin: 20px;
+}
+
+.header h1 {
+    font-size: clamp(2rem, 5vw, 4rem); /* Responsive text size */
+    line-height: 1.2;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Calculator container */
+.calculater {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    width: clamp(280px, 90%, 400px); /* Responsive width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Display screen */
+.display {
+    width: 100%;
+    padding: 10px;
+    background-color: #333333;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: right;
+    outline: none;
+}
+
+/* Buttons grid layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Buttons styling */
+.buttons button {
+    font-size: 1.5rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    background-color: hsl(0, 0%, 45%);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Hover and active states */
+.buttons button:hover {
+    background-color: hsl(0, 0%, 55%);
+    transform: scale(1.05);
+}
+
+.buttons button:active {
+    background-color: hsl(0, 0%, 65%);
+    transform: scale(0.95);
+}
+
+/* Operator buttons */
+.buttons .opreter {
+    background-color: rgb(196, 132, 13);
+}
+
+.buttons .opreter:hover {
+    background-color: rgb(226, 162, 43);
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 480px) {
+    .buttons button {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .display {
+        font-size: 1.5rem;
+        height: 50px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+}
